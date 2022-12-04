@@ -1,5 +1,6 @@
 import express from "express";
 import upload from "express-fileupload";
+import { treeCreator } from "./lib/decision_tree/treeHandler.js";
 import { toXlsxToListOfLists } from "./lib/excel/excelHandler.js";
 
 const PORT = 8000
@@ -12,11 +13,9 @@ app.listen(PORT, () =>{
     console.log("Server is running")
 })
 
-app.post("/findNextLevel", async (req,res)=>{
-    // console.log(req.body)
-    console.log(req.files.data)
-    // toXlsxToListOfLists(req.files.data.data)
-    // if(req.files){
-    // }
-    res.send('ok')
+app.post("/createTree", async (req,res)=>{
+    console.log(req.body)
+    const response = treeCreator(req.body)
+    res.json(response)
+    
 })

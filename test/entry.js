@@ -4,6 +4,7 @@ export function reciveData() {
             names: [
                 'montante','idade','salario','conta','emprestimo'
             ],
+            teste: ['alto','senior','alto','nao'],
             data : [
                 ['medio','senior','baixo','sim','nao'],
                 ['medio','senior','baixo','nao','nao'],
